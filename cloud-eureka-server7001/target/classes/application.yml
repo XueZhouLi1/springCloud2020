@@ -1,0 +1,13 @@
+server:
+  port: 7001
+
+eureka:
+  instance:
+    hostname: eureka7001.com  # eureka 服务器的实例地址
+
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      ## 一定要注意这里的地址，这是搭建集群的关键
+      defaultZone: http://eureka7002.com:7002/eureka/
