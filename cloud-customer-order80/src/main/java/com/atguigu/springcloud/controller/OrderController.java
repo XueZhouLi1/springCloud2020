@@ -22,7 +22,7 @@ import javax.annotation.Resource;
 public class OrderController {
 
     /**远程调用的 地址*/
-    public static final String PAYMENT_URL = "http://localhost:8001";
+    public static final String PAYMENT_URL = "http://CLOUD-PROVIDER-PAYMENT";
 
     @Resource
     private RestTemplate restTemplate;
@@ -30,7 +30,7 @@ public class OrderController {
     @PostMapping("customer/payment/create")
     public CommonResult<Payment> create(Payment payment) {
         /**
-         param1 请求地址，param2 请求参数， param3 返回类型
+         * param1 请求地址，param2 请求参数， param3 返回类型
          */
         return restTemplate.postForObject(PAYMENT_URL + "/payment/create", payment, CommonResult.class);
     }

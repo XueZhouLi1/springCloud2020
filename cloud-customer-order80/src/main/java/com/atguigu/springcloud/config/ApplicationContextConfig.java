@@ -16,6 +16,11 @@ public class ApplicationContextConfig {
 
     @Bean
     @LoadBalanced
+    /**
+     * @Bean 这个注解，把这个方法注入到Spring容器内
+     * @LoadBalanced 这个注解，就赋予了RestTemplate 负载均衡的能力
+     * 轮询算法
+     */
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
